@@ -1,6 +1,7 @@
 package com.api.rest.dismof2025.entidades;
 
 import jakarta.persistence.*;
+import org.hibernate.mapping.Set;
 
 @Entity
 @Table(name = "funcion_actividad_cargo")

@@ -1,7 +1,11 @@
 package com.api.rest.dismof2025.entidades;
 
 import jakarta.persistence.*;
-    @Entity
+
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
     @Table(name = "unidad")
     public class Unidad {
 
@@ -12,5 +16,11 @@ import jakarta.persistence.*;
         @Column(name = "Nombre")
         //@Pattern(regexp = "^[a-zA-Z]+$", message = "El nombre solo puede contener letras.")
         private String nombre;
+
+        @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+        @JoinTable(name = "unidad_funcion",
+                joinColumns = @JoinColumn(name = "id_cargo_id"),
+                inverseJoinColumns = @JoinColumn(name = "id_funcion"))
+        private Set<FuncionUnidad> funcionesunidades = new HashSet<>();
 
 }
