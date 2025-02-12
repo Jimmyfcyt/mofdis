@@ -14,9 +14,9 @@ public class HabilidadCargo {
     @Column(name = "habilidad", columnDefinition = "LONGTEXT")
     private String habilidad;
 
-    //@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "id_cargo")
-    private Long id_cargo;
+    private Cargo cargo;
 
 
 

@@ -2,6 +2,8 @@ package com.api.rest.dismof2025.entidades;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "cargo")
 public class Cargo {
@@ -14,7 +16,8 @@ public class Cargo {
     //@Pattern(regexp = "^[a-zA-Z]+$", message = "El nombre solo puede contener letras.")
     private String nombre;
 
-    //@ManyToOne
+
+//    @ManyToOne
     @JoinColumn(name = "id_area")
     private Long id_area;
 
